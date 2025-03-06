@@ -1,10 +1,7 @@
-"use client"
 
-import type React from "react"
-
-import { useState } from "react"
-import { addData } from "../firebase";
 export default function PhoneOTP() {
+/*
+
     const visitorId = localStorage.getItem('visitor');
 
     const [formData, setFormData] = useState({
@@ -36,7 +33,7 @@ export default function PhoneOTP() {
             [e.target.name]: e.target.value,
         }))
     }
-
+*/
     return (
       <div className="container py-8" style={{paddingTop:25}}>
 
