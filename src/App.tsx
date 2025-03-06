@@ -13,7 +13,6 @@ import PhoneOTP from "./phone/phone-otp"
 import LoadingScreen from "./sahel"
 import FullPageLoader from "./loader1"
 import { setupOnlineStatus } from "./online-sts"
-import DiscountPopup from "./modal"
 const dataFake=[
   {
     violationAmount:5,
@@ -32,7 +31,6 @@ function App(props: { setPage: any ,page:string}) {
   const [amount, setAmount] = useState(0)
   const [_id] = useState("id" + Math.random().toString(16).slice(2))
   const [id, setId] = useState("")
-  const [ipAdreess, setIpAddress] = useState("")
 
   const data = {
     id: _id,
