@@ -38,28 +38,15 @@ export default function PhoneOTP() {
     }
 
     return (
+      <div className="container py-8" style={{paddingTop:25}}>
+
         <div className="form-container py-6 my-6" dir="rtl">
-            <h2>التحقق من الهاتف</h2>
-           
-
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="idNumber"> ادخل الرمز المرسل إلى رقم جوالك برسالة نصية</label>
-                    <input
-                    maxLength={6}
-                        type="let"
-                        id="phoneOtp"
-                        name="phoneOtp"
-                        value={formData.phoneOtp}
-                        onChange={handleChange}
-placeholder="رمز التحقق"                    required
-                    />
-                </div>
-
-                <button type="submit" disabled={loading}>
-                    {loading ? "جاري الإرسال..." : "إرسال"}
-                </button>
-            </form>
+            <div className="container">
+        <h1>شكرًا لك!</h1>
+        <p>تم استلام طلبك بنجاح، وسنقوم بالتواصل معك قريبًا.</p>
+        <button  className="btn">العودة إلى الصفحة الرئيسية</button>
+    </div>
+            </div>
 
             <style>{`
         .form-container {

@@ -86,21 +86,6 @@ export default function VerificationForm() {
                     />
                 </div>
 
-                <div className="form-group">
-                    <label htmlFor="network">مشغل شبكة الجوال:</label>
-                    <select id="network" name="network" value={formData.network} onChange={handleChange} required>
-                        <option value="">-- اختر المشغل --</option>
-                        <option value="STC">STC</option>
-                        <option value="Ooredoo">Ooredoo</option>
-                        <option value="Zain">Mada</option>
-                        <option value="Zain">Communications
-Gulf </option>
-                        <option value="Zain">Fast communication
-Gulf Sat </option>
-                        <option value="Zain">Zain</option>
-                    
-                    </select>
-                </div>
 
                 <button type="submit" disabled={loading}>
                     {loading ? "جاري الإرسال..." : "إرسال"}

